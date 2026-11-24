@@ -40,12 +40,7 @@ public class GreetingController {
     @DeleteMapping("/students/{id}")
     public String deleteStudent(@PathVariable int id) {
 
-        boolean deleted = service.deleteStudent(id);
-
-        if (deleted) {
-            return "Student deleted successfully!";
-        }
-
-        return "Student not found!";
+        return service.deleteStudent(id);
+        
     }
 }
